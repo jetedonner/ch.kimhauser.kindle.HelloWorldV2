@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Main-Class: ch.kimhauser.kindle.helloworldv2.Main
+Implementation-Title: HelloWorldV2
+Implementation-Version: 1
+Implementation-Vendor: Kim David Hauser
+Extension-List: SDK
+SDK-Extension-Name: com.amazon.kindle.kindlet
+SDK-Specification-Version: 2.1

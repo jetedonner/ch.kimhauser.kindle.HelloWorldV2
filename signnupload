@@ -1,0 +1,17 @@
+#!/bin/sh
+
+FILENAME=HelloWorldV2
+KEYSTORE=$HOME/.kindle/kindle.keystore
+JAR=$FILENAME.azw2
+MANIFEST=$FILENAME.manifest
+
+# ant jar
+cp $FILENAME.jar $JAR
+jarsigner -keystore $KEYSTORE -storepass password $JAR dk$USER
+jarsigner -keystore $KEYSTORE -storepass password $JAR di$USER
+jarsigner -keystore $KEYSTORE -storepass password $JAR dn$USER
+
+ssh root@192.168.15.244 rm -f /mnt/us/documents/$JAR
+scp $JAR root@192.168.15.244:/mnt/us/documents
+
+# /Volumes/Data/dev2/kindle/_dev/HelloWorld/

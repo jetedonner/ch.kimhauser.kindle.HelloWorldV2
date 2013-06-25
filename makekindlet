@@ -1,0 +1,12 @@
+#!/bin/sh
+
+FILENAME=HelloWorldV2
+KEYSTORE=$HOME/.kindle/kindle.keystore
+JAR=$FILENAME.azw2
+MANIFEST=$FILENAME.manifest
+
+ant jar
+cp $FILENAME.jar $JAR
+jarsigner -keystore $KEYSTORE -storepass password $JAR dk$USER
+jarsigner -keystore $KEYSTORE -storepass password $JAR di$USER
+jarsigner -keystore $KEYSTORE -storepass password $JAR dn$USER
